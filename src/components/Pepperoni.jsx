@@ -9,7 +9,15 @@ function Pepperoni() {
   //   </section>
   //
   // Envuelve el resultado del map en un Fragment (<>...</>).
-  return null;
+  return (
+    <>
+      {PEPPERONI_POSITIONS.map((position, index) => (
+        <section key={`pep-${position}`} className={`pep ${position}`}>
+          {index + 1}
+        </section>
+      ))}
+    </>
+  );
 }
 
 export default Pepperoni;

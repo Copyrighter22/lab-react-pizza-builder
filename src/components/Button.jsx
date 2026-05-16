@@ -7,7 +7,14 @@ function Button({ children, color, isPressed, onClick }) {
   //
   // Pista: una template literal funciona bien aqui, por ejemplo:
   //   className={`btn btn-${color} ${isPressed ? "active" : ""}`}
-  return null;
+  return (
+    <button
+      className={`btn btn-${color} ${isPressed ? "active" : ""}`}
+      onClick={onClick}
+    >
+      {children}
+    </button>
+  );
 }
 
 export default Button;

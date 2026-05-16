@@ -20,7 +20,7 @@ export const PEPPERONI_POSITIONS = [
   'fifteen',
   'sixteen',
   'seventeen',
-  'eightteen',
+  'eighteen',
   'nineteen',
   'twenty',
   'twenty-one',

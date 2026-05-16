@@ -8,9 +8,9 @@ function Crust({ isGlutenFree, whiteSauce }) {
   // Pista: usa template literals con un operador ternario, por ejemplo:
   //   className={`crust ${isGlutenFree ? "crust-gluten-free" : ""}`}
   return (
-    <section className="crust crust-gluten-free">
+    <section className={`crust ${isGlutenFree ? "crust crust-gluten-free" : ""}`}>
       <section className="cheese"></section>
-      <section className="sauce sauce-white"></section>
+      <section className={`sauce ${whiteSauce ? "sauce-white" : ""}`}></section>
     </section>
   );
 }

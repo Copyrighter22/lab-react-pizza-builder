@@ -10,7 +10,16 @@ function GreenPeppers() {
   //   />
   //
   // Envuelve el resultado del map en un Fragment (<>...</>).
-  return null;
+  return (
+    <>
+      {GREEN_PEPPER_POSITIONS.map((position) => (
+        <section
+          key={`green-pepper-${position}`}
+          className={`green-pepper ${position}`}
+        />
+      ))}
+    </>
+  );
 }
 
 export default GreenPeppers;

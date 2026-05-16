@@ -10,7 +10,19 @@ function Mushrooms() {
   //   </section>
   //
   // Envuelve el resultado del map en un Fragment (<>...</>).
-  return null;
+  return (
+    <>
+      {MUSHROOM_POSITIONS.map((position, index) => (
+        <section
+          key={`mushroom-${position}`}
+          className={`mushroom ${position}`}
+        >
+          <div className="cap">{index + 1}</div>
+          <div className="stem"></div>
+        </section>
+      ))}
+    </>
+  );
 }
 
 export default Mushrooms;

@@ -15,9 +15,9 @@ function Pizza({
   // <GreenPeppers />, <Mushrooms /> y <Pepperoni />.
   return (
     <div id="pizza">
-      <GreenPeppers />
-      <Mushrooms />
-      <Pepperoni />
+      {greenPeppers && <GreenPeppers />}
+      {mushrooms && <Mushrooms />}
+      {pepperoni && <Pepperoni />}
       <Crust whiteSauce={whiteSauce} isGlutenFree={glutenFreeCrust} />
     </div>
   );
