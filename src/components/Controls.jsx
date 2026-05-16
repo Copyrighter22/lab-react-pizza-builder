@@ -1,28 +1,71 @@
-function Controls({ pizza, onToggle }) {
-  // TODO (Iteration 1+): wire each button's onClick to onToggle(<ingredient-name>)
-  // TODO: add/remove the "active" class on each button based on the pizza state
+import Button from "./Button";
 
+function Controls({
+  pepperoni,
+  onTogglePepperoni,
+  mushrooms,
+  onToggleMushrooms,
+  greenPeppers,
+  onToggleGreenPeppers,
+  whiteSauce,
+  onToggleWhiteSauce,
+  glutenFreeCrust,
+  onToggleGlutenFree,
+}) {
+  // Este componente ya esta listo: solo reparte los props a cinco <Button />.
+  // El comportamiento depende de que completes <Button /> (Iteracion 1.3)
+  // y de los useState/handlers en App.jsx (Iteracion 1.1 y 1.2).
   return (
     <div className="panel controls">
       <ul>
         <li>
-          <button className="btn btn-pepperoni active">pepperoni</button>
+          <Button
+            color="pepperoni"
+            isPressed={pepperoni}
+            onClick={onTogglePepperoni}
+          >
+            Pepperoni
+          </Button>
         </li>
         <li>
-          <button className="btn btn-mushrooms active">Mushrooms</button>
+          <Button
+            color="mushrooms"
+            isPressed={mushrooms}
+            onClick={onToggleMushrooms}
+          >
+            Mushrooms
+          </Button>
         </li>
         <li>
-          <button className="btn btn-green-peppers active">Green peppers</button>
+          <Button
+            color="green-peppers"
+            isPressed={greenPeppers}
+            onClick={onToggleGreenPeppers}
+          >
+            Green peppers
+          </Button>
         </li>
         <li>
-          <button className="btn btn-sauce active">White sauce</button>
+          <Button
+            color="sauce"
+            isPressed={whiteSauce}
+            onClick={onToggleWhiteSauce}
+          >
+            White sauce
+          </Button>
         </li>
         <li>
-          <button className="btn btn-crust active">Gluten-free crust</button>
+          <Button
+            color="crust"
+            isPressed={glutenFreeCrust}
+            onClick={onToggleGlutenFree}
+          >
+            Gluten-free crust
+          </Button>
         </li>
       </ul>
     </div>
-  )
+  );
 }
 
-export default Controls
+export default Controls;

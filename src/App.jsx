@@ -1,44 +1,58 @@
-import { useState } from 'react'
-import Header from './components/Header'
-import Controls from './components/Controls'
-import Price from './components/Price'
-import Pizza from './components/Pizza'
-import Footer from './components/Footer'
+import { useState } from "react";
+import Header from "./components/Header";
+import Controls from "./components/Controls";
+import Price from "./components/Price";
+import Pizza from "./components/Pizza";
+import Footer from "./components/Footer";
 
 function App() {
-  // TODO (Iteration 1): define the pizza state with useState.
-  //   Each ingredient should start as `true` (all toppings visible by default).
-  //
-  //   const [pizza, setPizza] = useState({
-  //     pepperoni: true,
-  //     mushrooms: true,
-  //     greenPeppers: true,
-  //     whiteSauce: true,
-  //     glutenFreeCrust: true,
-  //   })
+  // TODO (Iteracion 1): convierte cada uno de estos const en useState.
+  //   Cada ingrediente arranca en true (la pizza completa se ve al cargar).
+  //   Ejemplo: const [pepperoni, setPepperoni] = useState(true);
+  const pepperoni = true;
+  const mushrooms = true;
+  const greenPeppers = true;
+  const whiteSauce = true;
+  const glutenFreeCrust = true;
 
-  // TODO (Iteration 1): implement a handleToggle(ingredient) function that flips
-  // the value of the given ingredient in the state and call setPizza with the
-  // new object. Pass it down to <Controls /> as the `onToggle` prop.
-
-  const pizza = {
-    pepperoni: true,
-    mushrooms: true,
-    greenPeppers: true,
-    whiteSauce: true,
-    glutenFreeCrust: true,
-  }
+  // TODO (Iteracion 1): crea 5 handlers inline (uno por ingrediente)
+  // que llamen al setter correspondiente con el valor invertido y pasalos
+  // a <Controls /> en lugar de los () => {} vacios de mas abajo.
+  // Ejemplo: onTogglePepperoni={() => { setPepperoni(!pepperoni); }}
 
   return (
     <>
       <Header />
-      <Controls pizza={pizza} onToggle={() => {}} />
-      <Price pizza={pizza} />
-      <Pizza pizza={pizza} />
+      <Controls
+        pepperoni={pepperoni}
+        mushrooms={mushrooms}
+        greenPeppers={greenPeppers}
+        whiteSauce={whiteSauce}
+        glutenFreeCrust={glutenFreeCrust}
+        onTogglePepperoni={() => {}}
+        onToggleMushrooms={() => {}}
+        onToggleGreenPeppers={() => {}}
+        onToggleWhiteSauce={() => {}}
+        onToggleGlutenFree={() => {}}
+      />
+      <Price
+        pepperoni={pepperoni}
+        mushrooms={mushrooms}
+        greenPeppers={greenPeppers}
+        whiteSauce={whiteSauce}
+        glutenFreeCrust={glutenFreeCrust}
+      />
+      <Pizza
+        pepperoni={pepperoni}
+        mushrooms={mushrooms}
+        greenPeppers={greenPeppers}
+        whiteSauce={whiteSauce}
+        glutenFreeCrust={glutenFreeCrust}
+      />
       <p id="crumbs">&there4;</p>
       <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
